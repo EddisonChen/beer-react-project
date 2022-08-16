@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import HighAlcohol from './containers/AllBeers/HighAlcohol/HighAlcohol';
 import ClassicRange from './containers/ClassicRange/ClassicRange';
 import HighAcidity from "./containers/HighAcidity/HighAcidity";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     <>
       <h1>Beer Crawler</h1>
       <NavBar/>
+      <SearchBar beers={beers}/>
       <div className="beer-list">
         {beers && <AllBeers beers={beers}/>}
         {beers && <HighAlcohol beers={beers}/>}
