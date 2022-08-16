@@ -1,4 +1,5 @@
 import "./NavBar.scss";
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -6,9 +7,10 @@ const NavBar = () => {
             <h1>Filters</h1>
 
             <div className="nav-bar-options">
-                <button>High Alcohol</button>
-                <button>Classic Range (First brewed before 2010)</button>
-                <button>High Acidity</button>
+                <Link to="/AllBeers">All Beers</Link>
+                <Link to="/HighAlcoholBeers">High Alcohol</Link>
+                <Link to="/ClassicRange">Classic Range (First brewed before 2010)</Link>
+                <Link to="/HighAcidity">High Acidity</Link>
             </div>
         </div>
 

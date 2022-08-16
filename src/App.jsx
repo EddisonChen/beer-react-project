@@ -24,18 +24,21 @@ function App() {
   useEffect((getBeers), []);
 
   return (
+    <Router>
     <>
       <h1>Beer Crawler</h1>
       <NavBar/>
-      <SearchBar beers={beers}/>
+      {/* <SearchBar beers={beers}/> */}
       <div className="beer-list">
-        {beers && <AllBeers beers={beers}/>}
-        {beers && <HighAlcohol beers={beers}/>}
-        {beers && <ClassicRange beers={beers}/>}
-        {beers && <HighAcidity beers={beers}/>}
+        <Routes>
+          <Route path="/AllBeers" element={beers && <AllBeers beers={beers}/>}></Route>
+          <Route path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
+          <Route path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
+          <Route path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route>
+        </Routes>
       </div>
-      
     </>
+    </Router>
   );
 }
 

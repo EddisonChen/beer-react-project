@@ -7,7 +7,7 @@ const ClassicRange = (props) => {
 
     const classicRangeBeers = beers.filter((beer) => {
         return (
-            beer.first_brewed > .0004975
+            Number(beer.first_brewed) > .00498
         )
     })
 

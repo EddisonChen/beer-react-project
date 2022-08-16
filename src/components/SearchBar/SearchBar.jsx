@@ -1,8 +1,11 @@
 import "./SearchBar.scss";
 
 const SearchBar = (props) => {
-    
-    return (
+    const {beers} = props;
 
+    return (
+        <></>
     )
 }
+
+export default SearchBar;
