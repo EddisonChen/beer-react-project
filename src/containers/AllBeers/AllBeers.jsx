@@ -6,7 +6,7 @@ const AllBeers = (props) => {
     const {beers} = props;
 
     const showBeers = beers.map((beer) => {
-        return <SingleBeer key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>
+        return <SingleBeer className="single-beer" key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>
     })
 
     return (

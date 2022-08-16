@@ -2,6 +2,10 @@ import './App.scss';
 import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AllBeers from "./containers/AllBeers/AllBeers";
+import NavBar from "./components/NavBar/NavBar";
+import HighAlcohol from './containers/AllBeers/HighAlcohol/HighAlcohol';
+import ClassicRange from './containers/ClassicRange/ClassicRange';
+import HighAcidity from "./containers/HighAcidity/HighAcidity";
 
 function App() {
 
@@ -21,7 +25,14 @@ function App() {
   return (
     <>
       <h1>Beer Crawler</h1>
-      {beers && <AllBeers beers={beers}/>}
+      <NavBar/>
+      <div className="beer-list">
+        {beers && <AllBeers beers={beers}/>}
+        {beers && <HighAlcohol beers={beers}/>}
+        {beers && <ClassicRange beers={beers}/>}
+        {beers && <HighAcidity beers={beers}/>}
+      </div>
+      
     </>
   );
 }
