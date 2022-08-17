@@ -11,7 +11,11 @@ const HighAlcohol = (props) => {
         )
     })
 
-    const showHighAlcoholBeers = highAlcoholBeers.map((beer) => {
+    const sortedBeers = highAlcoholBeers.sort((a,b) => {
+        return b.abv - a.abv;
+    })
+
+    const showHighAlcoholBeers = sortedBeers.map((beer) => {
         return (
                 <SingleBeer key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>   
         )

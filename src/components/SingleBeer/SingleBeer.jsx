@@ -7,7 +7,7 @@ const SingleBeer = ({key, name, tagline, abv, ph, description, image}) => {
             <h1>{name}</h1>
             <h2>{tagline}</h2>
             <img src={image}/>
-            <p> abv: {abv}</p>
+            <p> ABV: {abv}</p>
             <p> pH: {ph}</p>
             <p>{description}</p>
         </div>
