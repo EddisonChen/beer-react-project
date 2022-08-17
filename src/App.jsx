@@ -31,7 +31,7 @@ function App() {
       {/* <SearchBar beers={beers}/> */}
       <div className="beer-list">
         <Routes>
-          <Route path="/AllBeers" element={beers && <AllBeers beers={beers}/>}></Route>
+          <Route path="/" element={beers && <AllBeers beers={beers}/>}></Route>
           <Route path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
           <Route path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
           <Route path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route>
