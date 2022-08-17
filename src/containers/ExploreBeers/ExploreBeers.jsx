@@ -2,6 +2,10 @@ import "./ExploreBeers.scss";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import AllBeers from "../AllBeers/AllBeers";
 import {useState} from 'react';
+import HighAcidity from "../HighAcidity/HighAcidity";
+import HighAlcohol from "../HighAlcohol/HighAlcohol";
+import ClassicRange from "../ClassicRange/ClassicRange";
+import {Link} from "react-router-dom";
 
 const ExploreBeers = (props) => {
 
@@ -26,6 +30,9 @@ const ExploreBeers = (props) => {
             searchTerm={searchTerm} 
             handleInput={handleInput}/>
             <AllBeers beers={filteredBeers}/>
+            <ClassicRange beers={filteredBeers}/>
+            <HighAcidity beers={filteredBeers}/>
+            <HighAlcohol beers={filteredBeers}/>
         </>
     )
 }
