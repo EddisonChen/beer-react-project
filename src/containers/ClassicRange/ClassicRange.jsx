@@ -6,14 +6,15 @@ const ClassicRange = (props) => {
     const {beers} = props;
 
     const classicRangeBeers = beers.filter((beer) => {
+        let beerYear = beer.first_brewed.slice(3)
         return (
-            Number(beer.first_brewed) > .00498
+            Number(beerYear) < 2010
         )
     })
 
     const showClassicRangeBeers = classicRangeBeers.map((beer) => {
         return (
-            <SingleBeer key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>   
+            <SingleBeer key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url} date={beer.first_brewed}/>   
         )
     })
 

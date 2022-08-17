@@ -3,14 +3,15 @@ import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AllBeers from "./containers/AllBeers/AllBeers";
 import NavBar from "./components/NavBar/NavBar";
-import HighAlcohol from './containers/AllBeers/HighAlcohol/HighAlcohol';
+import HighAlcohol from './containers/HighAlcohol/HighAlcohol';
 import ClassicRange from './containers/ClassicRange/ClassicRange';
 import HighAcidity from "./containers/HighAcidity/HighAcidity";
-import SearchBar from "./components/SearchBar/SearchBar";
+import ExploreBeers from "./containers/ExploreBeers/ExploreBeers";
+import BeerInfo from './components/BeerInfo/BeerInfo';
 
 function App() {
 
-  const [beers, setBeers] = useState();
+  const [beers, setBeers] = useState([]);
 
   const getBeers = () => {
     fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
@@ -23,20 +24,27 @@ function App() {
 
   useEffect((getBeers), []);
 
+  const renderBeerInfo = beers.map((beer) => {
+    return <Route path={`/${beer.id}`} element={beers && <BeerInfo beers={beer}/>}></Route>
+  })
+
   return (
     <Router>
     <>
-      <h1>Beer Crawler</h1>
-      <NavBar/>
-      {/* <SearchBar beers={beers}/> */}
-      <div className="beer-list">
-        <Routes>
-          <Route path="/" element={beers && <AllBeers beers={beers}/>}></Route>
-          <Route path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
-          <Route path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
-          <Route path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route>
-        </Routes>
-      </div>
+      <h1 className="heading">Beer Crawler</h1>
+
+      <body>
+        <NavBar/>
+        <div className="beer-list">
+          <Routes>
+            <Route className="beer-display" path="/" element={beers && <ExploreBeers beers={beers}/>}></Route>
+            <Route className="beer-display" path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
+            <Route className="beer-display" path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
+            <Route className="beer-display" path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route>
+            {beers && renderBeerInfo}
+          </Routes>
+        </div>
+      </body>
     </>
     </Router>
   );

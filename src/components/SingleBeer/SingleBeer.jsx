@@ -1,15 +1,16 @@
 import "./SingleBeer.scss"
 
-const SingleBeer = ({key, name, tagline, abv, ph, description, image}) => {
+const SingleBeer = ({key, date, name, tagline, abv, ph, description, image}) => {
 
     return (
-        <div>
+        <div className="single-beer">
             <h1>{name}</h1>
-            <h2>{tagline}</h2>
+            {/* <h2>{tagline}</h2> */}
             <img src={image}/>
             <p> ABV: {abv}</p>
             <p> pH: {ph}</p>
-            <p>{description}</p>
+            <p>First Brewed: {date}</p>
+            {/* <p>{description}</p> */}
         </div>
     )
 }

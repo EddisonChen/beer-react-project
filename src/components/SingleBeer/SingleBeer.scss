@@ -1,0 +1,13 @@
+.single-beer {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 635px;
+    
+    img {
+        width: 75px;
+        height: auto;
+    }
+}

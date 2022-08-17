@@ -12,12 +12,6 @@ const NavBar = () => {
                 <Link to="/ClassicRange">Classic Range (First brewed before 2010)</Link>
                 <Link to="/HighAcidity">High Acidity</Link>
             </div>
-
-            <h2>Sort By</h2>
-
-            <div>
-                
-            </div>
         </div>
 
     )

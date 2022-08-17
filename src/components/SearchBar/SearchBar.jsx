@@ -1,10 +1,17 @@
 import "./SearchBar.scss";
 
 const SearchBar = (props) => {
-    const {beers} = props;
+    const {label, searchTerm, handleInput} = props;
 
     return (
-        <></>
+        <form>
+            <input 
+            type="text"
+            name={label}
+            value={searchTerm}
+            onInput={handleInput}>
+            </input>
+        </form>
     )
 }
 

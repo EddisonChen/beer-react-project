@@ -17,7 +17,7 @@ const HighAcidity = (props) => {
 
     const showHighAcidityBeers = sortedBeers.map((beer)=> {
         return (
-            <SingleBeer key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>   
+            <SingleBeer date={beer.first_brewed} key={beer.id} name={beer.name} tagline={beer.tagline} abv={beer.abv} ph={beer.ph} description={beer.description} image={beer.image_url}/>   
         )
     })
 
