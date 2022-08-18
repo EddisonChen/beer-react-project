@@ -1,5 +1,6 @@
 import "./HighAlcohol.scss";
 import SingleBeer from "../../components/SingleBeer/SingleBeer";
+import {Link} from "react-router-dom";
 
 const HighAlcohol = (props) => {
 
@@ -17,7 +18,7 @@ const HighAlcohol = (props) => {
 
     const showHighAlcoholBeers = sortedBeers.map((beer) => {
         return (
-                <SingleBeer 
+            <Link to={`/${beer.id}`}><SingleBeer 
                 date={beer.first_brewed}
                 key={beer.id} 
                 name={beer.name} 
@@ -25,7 +26,8 @@ const HighAlcohol = (props) => {
                 abv={beer.abv} 
                 ph={beer.ph} 
                 description={beer.description} 
-                image={beer.image_url}/>   
+                image={beer.image_url}/>
+            </Link>   
         )
     })
 

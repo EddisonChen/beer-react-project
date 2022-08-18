@@ -28,6 +28,10 @@ function App() {
     return <Route path={`/${beer.id}`} element={beers && <BeerInfo beers={beer}/>}></Route>
   })
 
+  const [isHighAlcohol, setIsHighAlcohol] = useState(false);
+  const [isHighAcidity, setIsHighAcidity] = useState(false);
+  const [isClassicRange, setIsClassicRange] = useState(false);
+
   return (
     <Router>
     <>
@@ -37,10 +41,19 @@ function App() {
         <NavBar/>
         <div className="beer-list">
           <Routes>
-            <Route className="beer-display" path="/" element={beers && <ExploreBeers beers={beers}/>}></Route>
-            <Route className="beer-display" path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
+            <Route className="beer-display" path="/" 
+            element={beers && <ExploreBeers 
+            beers={beers} 
+            setIsHighAlcohol={setIsHighAlcohol} 
+            setIsHighAcidity={setIsHighAcidity} 
+            setIsClassicRange={setIsClassicRange}
+            isHighAlcohol={isHighAlcohol}
+            isHighAcidity={isHighAcidity}
+            isClassicRange={isClassicRange} 
+            />}></Route>
+            {/* <Route className="beer-display" path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
             <Route className="beer-display" path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
-            <Route className="beer-display" path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route>
+            <Route className="beer-display" path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route> */}
             {beers && renderBeerInfo}
           </Routes>
         </div>
