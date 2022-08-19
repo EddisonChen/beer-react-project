@@ -8,7 +8,7 @@ const AllBeers = (props) => {
     const {filteredBeers} = props;
 
     const showBeers = filteredBeers.map((beer) => {
-        return <Link to={`/${beer.id}`}><SingleBeer 
+        return <SingleBeer 
                 className="single-beer" 
                 key={beer.id} 
                 name={beer.name} 
@@ -18,7 +18,7 @@ const AllBeers = (props) => {
                 description={beer.description} 
                 image={beer.image_url} 
                 date={beer.first_brewed}/>
-                </Link>
+                
     })
 
     return (

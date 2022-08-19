@@ -33,16 +33,15 @@ function App() {
   const [isClassicRange, setIsClassicRange] = useState(false);
 
   return (
-    <Router>
+    // <Router>
     <>
       <h1 className="heading">Beer Crawler</h1>
 
       <body>
-        <NavBar/>
+        {/* <NavBar/> */}
         <div className="beer-list">
-          <Routes>
-            <Route className="beer-display" path="/" 
-            element={beers && <ExploreBeers 
+          {/* <Routes> */}
+            {beers && <ExploreBeers 
             beers={beers} 
             setIsHighAlcohol={setIsHighAlcohol} 
             setIsHighAcidity={setIsHighAcidity} 
@@ -50,16 +49,16 @@ function App() {
             isHighAlcohol={isHighAlcohol}
             isHighAcidity={isHighAcidity}
             isClassicRange={isClassicRange} 
-            />}></Route>
+            />}
             {/* <Route className="beer-display" path="/HighAlcoholBeers" element={beers && <HighAlcohol beers={beers}/>}></Route>
             <Route className="beer-display" path="/ClassicRange" element={beers && <ClassicRange beers={beers}/>}></Route>
             <Route className="beer-display" path="/HighAcidity" element={beers && <HighAcidity beers={beers}/>}></Route> */}
-            {beers && renderBeerInfo}
-          </Routes>
+            {/* {beers && renderBeerInfo} */}
+          {/* </Routes> */}
         </div>
       </body>
     </>
-    </Router>
+    // </Router>
   );
 }
 

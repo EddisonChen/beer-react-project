@@ -52,7 +52,7 @@ const ExploreBeers = (props) => {
     })
 
 
-    const [showBeer, setShowBeer] = useState(beers)
+    const [showBeer, setShowBeer] = useState([])
 
     const displayedBeers = () => {
         if (isHighAcidity == false && isHighAlcohol == false && isClassicRange ==false) {
@@ -71,10 +71,10 @@ const ExploreBeers = (props) => {
             setShowBeer(classicRangeHighAlcoholBeers)
         } else if (isClassicRange == true && isHighAlcohol == false && isHighAcidity == false) {
             setShowBeer(classicRangeBeers);
-        } 
+        } else {setShowBeer(beers)}
     }
 
-    useEffect((displayedBeers), [])
+    useEffect((displayedBeers))
 
     const handleIsHighAlcohol = () => {
         setIsHighAlcohol(!isHighAlcohol)
@@ -103,7 +103,6 @@ const ExploreBeers = (props) => {
 
         return beerNameLower.includes(searchTerm) && beer.image_url
     })
-    
 
     return (
         <>

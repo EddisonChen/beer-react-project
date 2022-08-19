@@ -7,7 +7,7 @@ const NavBar = () => {
             <h1>Filters</h1>
 
             <div className="nav-bar-options">
-                <Link to="/">All Beers</Link>
+                {/* <Link to="/">All Beers</Link> */}
                 {/* <Link to="/HighAlcoholBeers">High ABV</Link>
                 <Link to="/ClassicRange">Classic Range (First brewed before 2010)</Link>
                 <Link to="/HighAcidity">High Acidity</Link> */}
