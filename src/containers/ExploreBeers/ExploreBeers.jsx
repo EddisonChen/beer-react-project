@@ -100,21 +100,24 @@ const ExploreBeers = (props) => {
     })
 
     return (
-        <>
-            <SearchBar 
-            label={"beers"} 
-            searchTerm={searchTerm} 
-            handleInput={handleInput}/>
-            <FilterButtons 
-            handleIsClassicRange={handleIsClassicRange}
-            handleIsHighAcidity={handleIsHighAcidity}
-            handleIsHighAlcohol={handleIsHighAlcohol}
-            /> 
-            <AllBeers 
-            filteredBeers={filteredBeers}
-            />
-            
-        </>
+        <div className="body">
+            <div className="sidebar">
+                <SearchBar 
+                label={"beers"} 
+                searchTerm={searchTerm} 
+                handleInput={handleInput}/>
+                <FilterButtons 
+                handleIsClassicRange={handleIsClassicRange}
+                handleIsHighAcidity={handleIsHighAcidity}
+                handleIsHighAlcohol={handleIsHighAlcohol}
+                />
+            </div>
+            <div className="beer-list">
+                <AllBeers 
+                filteredBeers={filteredBeers}
+                />
+            </div> 
+        </div>
     )
 }
 

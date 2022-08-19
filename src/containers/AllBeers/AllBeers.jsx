@@ -1,14 +1,13 @@
 import "./AllBeers.scss";
 import SingleBeer from "../../components/SingleBeer/SingleBeer";
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
 
 const AllBeers = (props) => {
 
     const {filteredBeers} = props;
 
     const showBeers = filteredBeers.map((beer) => {
-        return <SingleBeer 
+        return <Link to={`/${beer.id}`} ><SingleBeer 
                 className="single-beer" 
                 key={beer.id} 
                 name={beer.name} 
@@ -18,7 +17,7 @@ const AllBeers = (props) => {
                 description={beer.description} 
                 image={beer.image_url} 
                 date={beer.first_brewed}/>
-                
+                </Link>
     })
 
     return (

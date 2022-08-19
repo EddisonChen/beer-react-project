@@ -1,4 +1,4 @@
-import "./SingleBeer.scss"
+import "./SingleBeer.scss";
 
 const SingleBeer = ({key, date, name, tagline, abv, ph, description, image}) => {
 
