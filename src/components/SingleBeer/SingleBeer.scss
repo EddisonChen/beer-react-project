@@ -1,14 +1,22 @@
 .single-beer {
-    border: 2px solid lightgray;
+    border: 2px solid white;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 635px;
-    
+    margin: 0;
+    height: 600px;
+
+    h1 {
+        font-size: 25px;
+    }
     img {
         width: 75px;
         height: auto;
     }
+}
+
+.single-beer:hover {
+    opacity: 70%;
 }

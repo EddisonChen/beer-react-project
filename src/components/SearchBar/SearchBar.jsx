@@ -7,6 +7,7 @@ const SearchBar = (props) => {
         <form>
             <input 
             type="text"
+            placeholder="Search!"
             name={label}
             value={searchTerm}
             onInput={handleInput}>

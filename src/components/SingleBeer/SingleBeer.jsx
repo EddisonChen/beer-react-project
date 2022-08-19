@@ -4,7 +4,7 @@ const SingleBeer = ({key, date, name, tagline, abv, ph, description, image}) => 
 
     return (
         <div className="single-beer">
-            <h1>{name}</h1>
+            <h1 className="beer-Name">{name}</h1>
             {/* <h2>{tagline}</h2> */}
             <img src={image}/>
             <p> ABV: {abv}</p>
