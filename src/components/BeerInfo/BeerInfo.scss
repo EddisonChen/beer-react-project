@@ -1,0 +1,19 @@
+.beer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.beer-name {
+    font-size: 30px;
+}
+
+.beer-tagline {
+    font-size: 25px;
+}
+
