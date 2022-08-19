@@ -69,11 +69,12 @@ const ExploreBeers = (props) => {
             setShowBeer(sortedHighAlcoholBeers);
         } else if (isHighAlcohol == true && isHighAcidity == false && isClassicRange ==true) {
             setShowBeer(classicRangeHighAlcoholBeers)
-        }
-        else if (isClassicRange == true && isHighAlcohol == false && isHighAcidity == false) {
+        } else if (isClassicRange == true && isHighAlcohol == false && isHighAcidity == false) {
             setShowBeer(classicRangeBeers);
         } 
     }
+
+    useEffect((displayedBeers), [])
 
     const handleIsHighAlcohol = () => {
         setIsHighAlcohol(!isHighAlcohol)
