@@ -2,21 +2,20 @@ import "./ExploreBeers.scss";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import AllBeers from "../AllBeers/AllBeers";
 import {useEffect, useState} from 'react';
-import HighAcidity from "../HighAcidity/HighAcidity";
-import HighAlcohol from "../HighAlcohol/HighAlcohol";
-import ClassicRange from "../ClassicRange/ClassicRange";
-import {Link} from "react-router-dom";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import FilterButtons from "../../components/FilterButtons/FilterButtons";
 
 const ExploreBeers = (props) => {
 
     const {beers,
-         setIsHighAlcohol, setIsHighAcidity, setIsClassicRange,
-         isHighAcidity, isClassicRange, isHighAlcohol
-        } = props;
+            setIsHighAlcohol, 
+            setIsHighAcidity, 
+            setIsClassicRange,
+            isHighAcidity, 
+            isClassicRange, 
+            isHighAlcohol
+            } = props;
 
-    const classicRangeBeers = beers.filter((beer) => {
+    const classicRangeBeers = beers.filter((beer) => { // filters beers before 2010
         let beerYear = beer.first_brewed.slice(3)
         return (
             Number(beerYear) < 2010
@@ -48,9 +47,8 @@ const ExploreBeers = (props) => {
         return highAcidityBeer.abv > 6
     })
     const highAcidityClassicRangeBeers = classicRangeBeers.filter((classicRangeBeer) => {
-        classicRangeBeer.ph < 4
+        return classicRangeBeer.ph < 4
     })
-
 
     const [showBeer, setShowBeer] = useState([])
 
@@ -73,19 +71,16 @@ const ExploreBeers = (props) => {
             setShowBeer(classicRangeBeers);
         } else {setShowBeer(beers)}
     }
-
     useEffect((displayedBeers))
 
     const handleIsHighAlcohol = () => {
         setIsHighAlcohol(!isHighAlcohol)
         displayedBeers()
     }
-
     const handleIsHighAcidity = () => {
         setIsHighAcidity(!isHighAcidity)
         displayedBeers()
     }
-
     const handleIsClassicRange = () => {
         setIsClassicRange(!isClassicRange)
         displayedBeers()
