@@ -7,8 +7,8 @@ const FilterButtons = (props) => {
     return(
         <>
             <button onClick={handleIsHighAlcohol}>High ABV</button>
-            <button type="checkbox" onClick={handleIsHighAcidity}>High Acidity</button>
-            <button type="checkbox" onClick={handleIsClassicRange}>Classic Range</button>
+            <button onClick={handleIsHighAcidity}>High Acidity</button>
+            <button onClick={handleIsClassicRange}>Classic Range</button>
         </>
     )
 }

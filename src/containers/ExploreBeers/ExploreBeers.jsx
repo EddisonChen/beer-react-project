@@ -16,8 +16,6 @@ const ExploreBeers = (props) => {
          isHighAcidity, isClassicRange, isHighAlcohol
         } = props;
 
-    const [searchTerm, setSearchTerm] = useState("");
-
     const classicRangeBeers = beers.filter((beer) => {
         let beerYear = beer.first_brewed.slice(3)
         return (
@@ -92,6 +90,8 @@ const ExploreBeers = (props) => {
         displayedBeers()
     }
 
+    const [searchTerm, setSearchTerm] = useState("");
+
     const handleInput = (event) => {
         const cleanInput = event.target.value.toLowerCase();
         setSearchTerm(cleanInput);
@@ -116,11 +116,7 @@ const ExploreBeers = (props) => {
             handleIsHighAlcohol={handleIsHighAlcohol}
             /> 
             <AllBeers 
-            beers={filteredBeers} 
-            isHighAcidity={isHighAcidity}
-            isHighAlcohol={isHighAlcohol}
-            isClassicRange={isClassicRange}
-            showBeer={showBeer}
+            filteredBeers={filteredBeers}
             />
             
         </>
