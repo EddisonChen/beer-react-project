@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {Link} from "react-router-dom";
 import ExploreBeers from "./containers/ExploreBeers/ExploreBeers";
 import BeerInfo from './components/BeerInfo/BeerInfo';
+import SpecialBeers from './components/SpecialBeers/SpecialBeers';
 
 function App() {
 
@@ -20,6 +21,19 @@ function App() {
 
   useEffect((getBeers), []);
 
+  const [specialBeers, setSpecialBeers] = useState([]);
+
+  const getCustomBeer = () => {
+    fetch("http://192.168.1.51:3015/specialbeers")
+    .then((response) => {
+      return response.json()
+    }) .then((data) => {
+          setSpecialBeers(data.specialbeers) 
+    }) 
+  }
+
+  useEffect((getCustomBeer))
+
   const renderBeerInfo = beers.map((beer) => {
     return <Route path={`/${beer.id}`} element={beers && <BeerInfo beers={beer}/>}></Route>
   })
@@ -31,6 +45,7 @@ function App() {
   return (
     <Router>
       <Link to="/"><h1 className="heading">Beer Crawler</h1></Link>
+      <SpecialBeers specialBeers={specialBeers} getCustomBeer={getCustomBeer}/>
       <Routes>
         <Route path="/" className="beer-list" element={beers && <ExploreBeers 
             beers={beers} 
